@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @user.contact%>
+</p>
+<p>
+  <strong>email:</strong>
+  <%= @user.email%>
+</p>
+<p>
+  <strong>image:</strong>
+    <%= image_tag @user.profile_image_url(:thumbnail), size: "100x100", class: "img-thumbnail" %>
+</p>
+<%= link_to 'Edit',[:edit, :admin, @user] %> |
+<%= link_to 'Back', admin_users_path %>
