@@ -1,7 +1,6 @@
 class Admin::TasksController < ApplicationController
   load_and_authorize_resource
-  before_action :authenticate_user!
-	before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   # GET /tasks
   # GET /tasks.json
@@ -76,4 +75,4 @@ class Admin::TasksController < ApplicationController
     def task_params
     	params.require(:task).permit(:title, :description)
     end
-end
+  end
