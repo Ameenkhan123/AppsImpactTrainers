@@ -32,5 +32,5 @@ Shrine.plugin :restore_cached_data
 Shrine.plugin :presign_endpoint if Rails.env.production?
 Shrine.plugin :upload_endpoint if !Rails.env.production?
 
-Shrine::Attacher.promote { |data| PromoteJob.perform_async(data) }
-Shrine::Attacher.delete { |data| DeleteJob.perform_async(data) }
+# Shrine::Attacher.promote { |data| PromoteJob.perform_async(data) }
+# Shrine::Attacher.delete { |data| DeleteJob.perform_async(data) }

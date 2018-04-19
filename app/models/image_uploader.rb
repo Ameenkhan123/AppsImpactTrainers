@@ -21,9 +21,9 @@ class ImageUploader < Shrine
     end
   end
 
-  process(:store) do |io, context|
-    thumbnail = resize_to_limit(io, 300, 300) { |cmd| cmd.auto_orient }
+  # process(:store) do |io, context|
+  #   thumbnail = resize_to_limit(io, 300, 300) { |cmd| cmd.auto_orient }
 
-    { original: io, thumbnail: thumbnail }
-  end
+  #   { original: io, thumbnail: thumbnail }
+  # end
 end
