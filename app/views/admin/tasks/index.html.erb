@@ -20,11 +20,11 @@
       <td><%= task.title %></td>
       <td><%= task.try(:description).try(:html_safe) %></td>
       <% if can? :read, task%>
-      <td><%= link_to 'Show', task %></td>
+      <td><%= link_to 'Show', [:admin, task] %></td>
       <% end %>
       <% if can? :update, task%>
-      <td><%= link_to 'Edit', edit_task_path(task) %></td>
-      <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Edit', [:edit, :admin, task] %></td>
+      <td><%= link_to 'Destroy',  [:admin, task], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <% end %>
     </tr>
     <% end %>
@@ -32,6 +32,6 @@
 </table>
 
 <br>
-<% if can? :create, @task%>
+<% if can? :create, Task%>
 <%= link_to 'New Task', new_admin_task_path %>
 <% end %>
