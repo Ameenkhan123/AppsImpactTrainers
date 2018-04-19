@@ -10,12 +10,10 @@
 
 <body>
   <%= render 'layouts/header' %>
-  <p id="notice"><%= notice %></p>
-  <p id="alert"><%= alert %></p>
   <div class="container">
-    <div>
-      <%= yield %>
-    </div>
+    <p id="notice"><%= notice %></p>
+    <p id="alert"><%= alert %></p>
+    <%= yield %>
   </div>
 </body>
 </html>
