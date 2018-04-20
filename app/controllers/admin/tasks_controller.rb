@@ -14,6 +14,7 @@ class Admin::TasksController < ApplicationController
   # GET /tasks/1.json
   def show
   	@task = Task.find(params[:id])
+    @users = User.all
   end
 
   # GET /tasks/new

@@ -22,6 +22,7 @@ class Admin::UsersController < ApplicationController
 
   
   def create
+    #@user = User.new(user_params)
     if @user.save
       redirect_to [:admin, @user]
     else
@@ -57,4 +58,7 @@ class Admin::UsersController < ApplicationController
   def set_user
    @user = User.find(params[:id])
  end
+ def user_params
+  params.require(:user).permit(:name , :contact, :profile_image, :profile_image_data, :role, :email, :password, :password_confirmation)
+end
 end

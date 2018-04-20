@@ -12,6 +12,10 @@
   <%= @user.email%>
 </p>
 <p>
+  <strong>role:</strong>
+  <%= @user.role %>
+</p>
+<p>
   <strong>image:</strong>
   <%= image_tag @user.profile_image_url(:thumbnail), size: "100x100", class: "img-thumbnail" %>
 </p>
