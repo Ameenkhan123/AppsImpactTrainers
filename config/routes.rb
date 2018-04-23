@@ -3,9 +3,9 @@ Rails.application.routes.draw do
 	resources :tasks
 	devise_for :users
 	namespace :admin do
-		# root :to => "users#index"
 		resources :users
 		resources :tasks
+		resources :assignments
 	end
 	if Rails.env.production?
 		mount Shrine.presign_endpoint(:cache) => "/presign"

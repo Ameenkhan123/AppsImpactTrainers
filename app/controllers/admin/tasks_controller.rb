@@ -15,6 +15,7 @@ class Admin::TasksController < ApplicationController
   def show
   	@task = Task.find(params[:id])
     @users = User.all
+    # @task = Task.new
   end
 
   # GET /tasks/new
@@ -74,6 +75,6 @@ class Admin::TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-    	params.require(:task).permit(:title, :description)
+    	params.require(:task).permit(:title, :description, :user_id, :id)
     end
   end

@@ -1,0 +1,18 @@
+<h1>Assignment for Trainee</h1>
+<%if current_user.role == "admin" or current_user.role == "trainer" %>
+  <%= form_with(model: [:admin, @task], local: true) do |f| %>
+      <% @users.each do |user| %>
+        <% if user.role == "trainee" %>
+        <li>
+          <%= f.check_box :user_id, checked: false,:value => user.id  %>
+          <%#= f.hidden_field :user_id, :value => user.id %>
+          <%= f.hidden_field :id, :value => @task.id %>
+          <%= user.name %>
+        </li>
+        <% end %>
+      <% end %>
+      <%= f.submit "Submit", class: "btn btn-default" %>
+  <% end %>
+<% end %>
+<br>
+<%= link_to 'Back', admin_tasks_path %>

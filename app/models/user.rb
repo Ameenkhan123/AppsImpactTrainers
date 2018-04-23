@@ -1,6 +1,7 @@
 class User < ApplicationRecord
-	include ImageUploader::Attachment.new(:profile_image)
-	validates :contact, presence: true
+  has_many :tasks, :dependent => :destroy
+  include ImageUploader::Attachment.new(:profile_image)
+  validates :contact, presence: true
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
