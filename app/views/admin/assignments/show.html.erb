@@ -4,8 +4,7 @@
       <% @users.each do |user| %>
         <% if user.role == "trainee" %>
         <li>
-          <%= f.check_box :user_id, checked: false,:value => user.id  %>
-          <%#= f.hidden_field :user_id, :value => user.id %>
+          <%= f.check_box "user_id", multiple: true, checked: false,:value => user.id  %>
           <%= f.hidden_field :id, :value => @task.id %>
           <%= user.name %>
         </li>

@@ -7,7 +7,7 @@
       <th>contact</th>
       <th>profile_image</th>
       <th>email</th>
-      <th colspan="3"></th>
+      <th>Actions</th>
     </tr>
   </thead>
 
@@ -19,9 +19,11 @@
       <td><%= image_tag user.profile_image_url(:thumbnail), size: "100x100", class: "img-thumbnail" %>
       </td>
       <td><%= user.email %></td>
-      <td><%= link_to 'Show', [:admin, user]%></td>
-      <td><%= link_to 'Edit', [:edit, :admin, user] %></td>
-      <td><%= link_to 'Destroy', [:admin, user], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td>
+        <%= link_to 'Show', [:admin, user]%>
+        <%= link_to 'Edit', [:edit, :admin, user] %>
+        <%= link_to 'Destroy', [:admin, user], method: :delete, data: { confirm: 'Are you sure?' } %> 
+      </td>
     </tr>
     <% end %>
   </tbody>
