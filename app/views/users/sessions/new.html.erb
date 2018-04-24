@@ -1,26 +1,29 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-<div class="field">
-  <%= f.label :name %><br />
-  <%= f.text_field :name, autofocus: true%>
+<div class="page login-page" style="margin-top: -5%">
+  <div class="container">
+    <div class="form-outer text-center d-flex align-items-center">
+      <div class="form-inner">
+        <div class="logo text-uppercase"><span>Bootstrap</span><strong class="text-primary">Dashboard</strong></div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), :class => 'text-left form-validate') do |f| %>
+        <div class="form-group-material">
+          <%= f.text_field :name, autofocus: true, :class => 'input-material', :id => 'login-username'%>
+          <label for="login-username" class="label-material">Username</label>
+        </div>
+        <div class="form-group-material">
+         <%= f.password_field :password, autocomplete: "off", :class => 'input-material', :id => 'login-password' %>
+         <label for="login-password" class="label-material">Password</label>
+       </div>
+       <div class="form-group text-center">
+        <a id="login" href="index.html" class="btn btn-primary">Login</a>
+        <%= f.submit "Log in", :id => 'login', :class =>  'btn btn-primary' %>
+        <!-- This should be submit button but I replaced it with <a> for demo purposes-->
+      </div>
+      <% end %>
+      <%= render "users/shared/links" %>
+    </div>
+    <div class="copyrights text-center">
+      <p>Design by <a href="https://bootstrapious.com" class="external">Bootstrapious</a></p>
+    </div>
+  </div>
 </div>
-
-<div class="field">
-  <%= f.label :password %><br />
-  <%= f.password_field :password, autocomplete: "off" %>
 </div>
-
-<% if devise_mapping.rememberable? -%>
-<div class="field">
-  <%= f.check_box :remember_me %>
-  <%= f.label :remember_me %>
-</div>
-<% end -%>
-
-<div class="actions">
-  <%= f.submit "Log in" %>
-</div>
-<% end %>
-
-<%= render "users/shared/links" %>
