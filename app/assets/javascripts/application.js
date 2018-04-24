@@ -15,7 +15,6 @@
 //= require ckeditor/init
 //= require popper
 //= require bootstrap
-//= require turbolinks
 //= require dataTables.bootstrap4.min
 //= require jquery.dataTables.min
 //= require impact_backhand/additional-methods
