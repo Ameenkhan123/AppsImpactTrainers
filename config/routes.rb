@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-	root 'tasks#index'
+	root 'home#index'
+	get 'home/charts'
+	get 'home/index'
+	resources :home
 	resources :tasks
 	devise_for :users
 	namespace :admin do
