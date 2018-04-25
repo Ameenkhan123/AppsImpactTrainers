@@ -18,20 +18,9 @@
     <tr>
       <td><%= task.title %></td>
       <td><%= task.try(:description).try(:html_safe) %></td>
-      <% if can? :read, task%>
       <td><%= link_to 'Show', [:trainee, task] %>
-        <% end %>
-        <% if can? :update, task%>
-        <%= link_to 'Edit', [:edit, :trainee, task] %>
-        <%= link_to 'Destroy',  [:trainee, task], method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
       </td>
     </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-<% if can? :create, Task%>
-<%= link_to 'New Task', new_trainee_task_path %>
-<% end %>
