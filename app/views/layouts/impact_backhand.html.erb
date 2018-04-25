@@ -3,15 +3,17 @@
 <head>
 	<title>AppsImpactTrainers</title>
 	<%= csrf_meta_tags %>
-	<%= stylesheet_link_tag    'application', media: 'all' %>
-	<%= javascript_include_tag 'application' %>
+	<%= stylesheet_link_tag    'impact_backhand/impact_backhand', media: 'all' %>
+	<%= javascript_include_tag 'impact_backhand/impact_backhand' %>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
 	<%= render 'layouts/side' %>
 	<%= render 'layouts/header' %>
-	<%= yield %>
-	<%= render 'layouts/footer' %>
+  <div class="container">
+    <%= yield %>
+ </div>
+ <%= render 'layouts/footer' %>
 </body>
 </html>

@@ -149,11 +149,13 @@
 						</ul>
 					</li>
 					<!-- Log out-->
+					<% if user_signed_in? %>
 					<li class="nav-item"><%= link_to destroy_user_session_path, method: :delete, :class =>"nav-link logout" do %> 
 						<span class="d-none d-sm-inline-block">Logout</span>
 						<i class="fa fa-sign-out"></i>
 						<%end%>
 					</li>
+					<%end%>
 				</ul>
 			</div>
 		</div>
