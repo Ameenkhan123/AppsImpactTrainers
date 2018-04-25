@@ -14,6 +14,15 @@ Rails.application.routes.draw do
 		get 'dashboard' => 'dashboards#dashboard'
 		get 'trainees' =>'dashboards#trainees'
 	end
+	namespace :trainer do
+		resources :tasks
+		resources :assignments
+		get 'dashboard' => 'dashboards#dashboard'
+		get 'trainees' =>'dashboards#trainees'
+	end
+	namespace :trainee do
+		resources :tasks
+	end
 	if Rails.env.production?
 		mount Shrine.presign_endpoint(:cache) => "/presign"
 	else

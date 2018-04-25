@@ -1,0 +1,33 @@
+<p>
+  <strong>Title:</strong>
+  <%= @task.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @task.try(:description).try(:html_safe)%>
+</p>
+
+
+<% if can? :update, @task%>
+ <%= link_to 'Edit',edit_trainee_task_path %> |
+<% end %>
+<%= link_to 'Back', trainee_tasks_path %>
+
+
+
+
+<%#if current_user.role == "admin" or current_user.role == "trainer" %>
+  <%#= form_with(model: [:admin, @task], local: true) do |f| %>
+      <%# @users.each do |user| %>
+        <%# if user.role == "trainee" %>
+        <!-- <li> -->
+          <%#= f.check_box :user_id, :value => user.id, checked: false  %>
+          <%#= f.hidden_field :id, :value => @task.id %>
+          <%#= user.name %>
+        <!-- </li> -->
+        <%# end %>
+      <%# end %>
+      <%#= f.submit "Submit", class: "btn btn-default" %>
+  <%# end %>
+<%# end %>
