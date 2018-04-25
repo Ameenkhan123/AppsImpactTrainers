@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_many :tasks, :dependent => :destroy
+  extend FriendlyId
+  friendly_id :name, use: [:slugged, :finders]
   include ImageUploader::Attachment.new(:profile_image)
   validates :contact, presence: true
   # Include default devise modules. Others available are:

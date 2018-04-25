@@ -640,6 +640,8 @@ GEM
     ffi (1.9.23)
     font-awesome-sass (5.0.9)
       sass (>= 3.2)
+    friendly_id (5.2.4)
+      activerecord (>= 4.0.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (1.0.1)
@@ -791,6 +793,7 @@ DEPENDENCIES
   devise
   fastimage
   font-awesome-sass
+  friendly_id
   image_processing
   jbuilder (~> 2.5)
   jquery-rails
