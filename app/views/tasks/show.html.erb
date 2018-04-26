@@ -1,14 +1,18 @@
-<p>
-  <strong>Title:</strong>
-  <%= @task.title %>
-</p>
+<div class="card" style="width: 50rem; margin-top: 1%">
+  <div class="card-body">
+    <p>
+      <strong>Title:</strong><br>
+     <b style="color:black"> <%= @task.title %></b>
+    </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @task.try(:description).try(:html_safe)%>
-</p>
+    <p>
+      <strong>Description:</strong>
+     <b style="color:black"> <%= @task.try(:description).try(:html_safe)%></b>
+    </p>
+    <a href="#" class="card-link"><%= link_to 'Back', admin_tasks_path %></a>
+  </div>
+</div>
 
-<%= link_to 'Back', tasks_path %>
 
 <%#if current_user.role == "admin" or current_user.role == "trainer" %>
   <%# @users.each do |user| %>

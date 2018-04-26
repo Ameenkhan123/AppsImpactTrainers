@@ -1,19 +1,22 @@
 <div class="container">  
-  <h1>Assignment for Trainee</h1>
-  <%if current_user.role == "admin" or current_user.role == "trainer" %>
-    <%= form_with(model: [:admin, @task], local: true) do |f| %>
-        <% @users.each do |user| %>
-          <% if user.role == "trainee" %>
-          <li>
-            <%= f.check_box "user_id", checked: false,:value => user.id  %>
-            <%= f.hidden_field :id, :value => @task.id %>
-            <%= user.name %>
-          </li>
+  <div class="card" style="width: 50rem; margin-top: 1%">
+    <div class="card-body">
+    <h1>Assignment for Trainee</h1>
+    <%if current_user.role == "admin" or current_user.role == "trainer" %>
+      <%= form_with(model: [:admin, @task], local: true) do |f| %>
+          <% @users.each do |user| %>
+            <% if user.role == "trainee" %>
+            <li>
+              <%= f.check_box "user_id", checked: false,:value => user.id  %>
+              <%= f.hidden_field :id, :value => @task.id %>
+              <%= user.name %>
+            </li>
+            <% end %>
           <% end %>
-        <% end %>
-        <%= f.submit "Submit", class: "btn btn-default" %>
+          <%= f.submit "Submit", class: "btn btn-dark" %>
+      <% end %>
     <% end %>
-  <% end %>
-  <br>
-  <%= link_to 'Back', admin_tasks_path %>
+      <a href="#" class="card-link"><%= link_to 'Back', admin_task_path %></a>
+    </div>
+  </div>
 </div>

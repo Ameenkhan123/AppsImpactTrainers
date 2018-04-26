@@ -1,35 +1,20 @@
-<div class="container">
-  <p>
-    <strong>Title:</strong>
-    <%= @task.title %>
-  </p>
+<div class="card top" style="width: 50rem;">
+  <div class="card-body">
+    <p>
+      <strong>Title:</strong><br>
+      <b style="color:black"> <%= @task.title %></b>
+    </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= @task.try(:description).try(:html_safe)%>
-  </p>
-
-  <% if can? :create, @task%>
-  <%= link_to 'Assignment', trainer_assignment_path %><br>
-  <% end %>
-
-  <% if can? :update, @task%>
-  <%= link_to 'Edit',edit_trainer_task_path %> |
-  <% end %>
-  <%= link_to 'Back', trainer_tasks_path %>
+    <p>
+      <strong>Description:</strong>
+      <b style="color:black"> <%= @task.try(:description).try(:html_safe)%></b>
+    </p>
+    <a href="#" class="card-link"><%= link_to 'Back', trainer_tasks_path %></a> |
+    <% if can? :create, @task%>
+    <a href="#" class="card-link"><%= link_to 'Assignment', trainer_assignment_path %></a> |
+    <% end %>
+    <% if can? :update, @task%>
+    <a href="#" class="card-link"><%= link_to 'Edit',edit_trainer_task_path %> </a>
+    <% end %>
+  </div>
 </div>
-
-<%#if current_user.role == "admin" or current_user.role == "trainer" %>
-<%#= form_with(model: [:admin, @task], local: true) do |f| %>
-<%# @users.each do |user| %>
-<%# if user.role == "trainee" %>
-<!-- <li> -->
-<%#= f.check_box :user_id, :value => user.id, checked: false  %>
-<%#= f.hidden_field :id, :value => @task.id %>
-<%#= user.name %>
-<!-- </li> -->
-<%# end %>
-<%# end %>
-<%#= f.submit "Submit", class: "btn btn-default" %>
-<%# end %>
-<%# end %>

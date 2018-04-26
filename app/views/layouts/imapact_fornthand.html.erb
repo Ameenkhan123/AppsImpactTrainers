@@ -3,9 +3,17 @@
  <head>
   <title>AppsImpactTrainers</title>
   <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag    'imapact_fornthand/imapact_fornthand', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%#= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag    'imapact_fornthand/imapact_fornthand', media: 'all' %>
+  <%= javascript_include_tag 'imapact_fornthand/imapact_fornthand'%>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style type="text/css">
+    .intro-page{
+      background-image: url(<%= asset_path 'background_img_01b'%>);
+    }
+    .top{
+      height: 500px;
+    }
+  </style>
 </head>
 
 <body>

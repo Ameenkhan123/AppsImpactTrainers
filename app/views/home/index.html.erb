@@ -16,6 +16,12 @@
             <li><a href="#services">Services</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><% if user_signed_in? %>
+                <%= link_to 'log out', destroy_user_session_path, method: :delete%> 
+                <% else %> 
+                <i class="icon-interface-windows"></i><%= link_to 'log In', new_user_session_path %> 
+                <%end%>
+            </li>
         </ul>
     </nav>
 </div>
@@ -49,11 +55,3 @@
         </ul>
     </div>
 </footer>
-<style type="text/css">
-    .intro-page{
-        background-image: url(<%= asset_path 'background_img_01b'%>);
-    }
-    .top{
-        height: 500px;
-    }
-</style>
