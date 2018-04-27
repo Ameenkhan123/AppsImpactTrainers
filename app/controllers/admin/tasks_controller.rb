@@ -9,6 +9,7 @@ class Admin::TasksController < ApplicationController
 		@tasks = Task.all   
 		@q = Task.ransack(params[:q])
 		@tasks = @q.result(distinct: true)
+		@messages = Message.all
 	end
 
 	# GET /tasks/1

@@ -25,10 +25,6 @@
 				<li><%= link_to admin_trainees_path do %>
 					<i class="fa fa-bar-chart"></i>Trainees<%end%>
 				</li>
-				<%elsif current_user.role == "trainer" %>
-				<li><%= link_to admin_trainees_path do %>
-					<i class="fa fa-bar-chart"></i>Trainees<%end%>
-				</li>
 				<%end%>
 				<%end%>
 				<li><%= link_to admin_tasks_path do %>

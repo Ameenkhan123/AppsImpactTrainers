@@ -1,0 +1,31 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <title>AppsImpactTrainers</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'application', media: 'all'%>
+  <%= javascript_include_tag 'application' %>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9">
+        <%= yield %>
+      </div>
+      <div class="col-sm-3 top1">
+       <% content_for :title, 'admin | Action Cable Chat' %>
+       <div class="message-history" id="messages">
+        <%#= render @messages %>
+        <%= render partial: 'messages/message', collection: @messages %> 
+      </div>
+      <div class="footer" >
+        <div class="input-box">
+          <input type="text" class="input-box_text" id="message_input"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,4 +1,5 @@
 class Trainee::TasksController < ApplicationController
+	layout 'trainee'
 	load_and_authorize_resource
 	before_action :authenticate_user!
 	before_action :set_task, only: [:show, :edit, :update, :destroy]
@@ -9,6 +10,7 @@ class Trainee::TasksController < ApplicationController
 		@tasks = Task.all   
 		@q = Task.ransack(params[:q])
 		@tasks = @q.result(distinct: true)
+		@messages = Message.all
 	end
 
 	# GET /tasks/1
@@ -16,6 +18,7 @@ class Trainee::TasksController < ApplicationController
 	def show
 		@task = Task.friendly.find(params[:id])
 		@users = User.all
+		@messages = Message.all
 		# @task = Task.new
 	end
 

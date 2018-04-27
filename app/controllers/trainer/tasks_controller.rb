@@ -1,4 +1,5 @@
 class Trainer::TasksController < ApplicationController
+	layout 'trainer'
 	load_and_authorize_resource
 	before_action :authenticate_user!
 	before_action :set_task, only: [:show, :edit, :update, :destroy]
@@ -9,6 +10,7 @@ class Trainer::TasksController < ApplicationController
 		@tasks = Task.all   
 		@q = Task.ransack(params[:q])
 		@tasks = @q.result(distinct: true)
+		@messages = Message.all
 	end
 
 	# GET /tasks/1

@@ -1,23 +1,36 @@
-<p>
-  <strong>name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @user.contact%>
-</p>
-<p>
-  <strong>email:</strong>
-  <%= @user.email%>
-</p>
-<p>
-  <strong>role:</strong>
-  <%= @user.role %>
-</p>
-<p>
-  <strong>image:</strong>
-  <%= image_tag @user.profile_image_url(:thumbnail), size: "100x100", class: "img-thumbnail" %>
-</p>
-<%= link_to 'Edit',[:edit, :admin, @user] %> |
-<%= link_to 'Back', admin_users_path %>
+<div class="card top" style="width: 60rem; box-shadow: 1px 1px 2px 2px">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-sm-4">
+        <p>
+          <strong>Image:</strong>
+          <%= image_tag @user.profile_image_url(:thumbnail), size: "100x100", class: "img-thumbnail" %>
+        </p>
+      </div>
+      <div class="col-sm-4">
+        <p>
+          <strong>Name:</strong>
+          <b style="color:black"><%= @user.name %></b>
+        </p>
+        <p>
+          <strong>Contact:</strong>
+          <b style="color:black"><%= @user.contact%></b>
+        </p>
+      </div>
+      <div class="col-sm-4">
+        <p>
+          <strong>Email:</strong>
+          <b style="color:black"><%= @user.email%></b>
+        </p>
+        <p>
+          <strong>Role:</strong>
+          <b style="color:black"><%= @user.role %></b>
+        </p>
+      </div>
+    </div>
+    <a href="#" class="card-link"><%= link_to 'Back', admin_users_path %></a> |
+    <% if can? :update, @task%>
+    <a href="#" class="card-link"><%= link_to 'Edit',[:edit, :admin, @user] %>  </a>
+    <% end %>
+  </div>
+</div>

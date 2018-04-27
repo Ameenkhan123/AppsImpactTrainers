@@ -15,6 +15,7 @@
 //= require ckeditor/init
 //= require popper
 //= require bootstrap
+//= require rooms
 //= require dataTables.bootstrap4.min
 //= require jquery.dataTables.min
 //= require_tree .

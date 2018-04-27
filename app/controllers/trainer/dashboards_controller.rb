@@ -1,4 +1,5 @@
 class Trainer::DashboardsController < ApplicationController 
+	layout 'trainer'
 	before_action :authenticate_user!
 	# layout 'impact_backhand'
 

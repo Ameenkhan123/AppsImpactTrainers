@@ -4,9 +4,9 @@ class ApplicationController < ActionController::Base
 		if resource.role == 'admin'
 			admin_users_path
 		elsif resource.role == 'trainer'
-			admin_tasks_path
+			trainer_tasks_path
 		else
-			root_path
+			trainee_tasks_path
 		end
 	end
 	rescue_from CanCan::AccessDenied do |exception|

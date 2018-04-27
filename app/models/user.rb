@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :messages, :dependent => :destroy
   has_many :tasks, :dependent => :destroy
   extend FriendlyId
   friendly_id :name, use: [:slugged, :finders]
