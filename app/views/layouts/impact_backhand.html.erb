@@ -9,11 +9,30 @@
 </head>
 
 <body>
-	<%= render 'layouts/side' %>
-	<%= render 'layouts/header' %>
-  <div class="container">
-    <%= yield %>
- </div>
- <%= render 'layouts/footer' %>
+	<div class="row">
+		<div class="col-sm-9">
+			<%= render 'layouts/side' %>
+			<div class="page">
+				<%= render 'layouts/header' %>
+				<div class="container">
+					<%= yield %>
+				</div>
+				<%= render 'layouts/footer' %>
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="container">
+				<% content_for :title, 'admin | Action Cable Chat' %>
+				<div class="message-history" id="messages">
+					<%= render partial: 'messages/message', collection: @messages %>
+				</div>
+				<div class="footer">
+					<div class="input-box">
+						<input type="text" class="input-box_text" id="message_input"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

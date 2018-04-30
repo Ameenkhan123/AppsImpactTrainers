@@ -16,3 +16,5 @@ Rails.application.config.assets.precompile += %w( impact_backhand/impact_backhan
 Rails.application.config.assets.precompile += %w( impact_backhand/impact_backhand.scss )
 Rails.application.config.assets.precompile += %w( imapact_fornthand/imapact_fornthand.js )
 Rails.application.config.assets.precompile += %w( imapact_fornthand/imapact_fornthand.scss )
+Rails.application.config.assets.precompile += %w( trainee/trainee.js )
+Rails.application.config.assets.precompile += %w( trainee/trainee.scss )

@@ -16,7 +16,6 @@
       <div class="col-sm-3 top1">
        <% content_for :title, 'admin | Action Cable Chat' %>
        <div class="message-history" id="messages">
-        <%#= render @messages %>
         <%= render partial: 'messages/message', collection: @messages %> 
       </div>
       <div class="footer" >

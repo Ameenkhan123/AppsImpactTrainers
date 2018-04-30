@@ -3,8 +3,8 @@
  <head>
   <title>AppsImpactTrainers</title>
   <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag    'application', media: 'all'%>
-  <%= javascript_include_tag 'application' %>
+  <%= stylesheet_link_tag    'trainee/trainee', media: 'all'%>
+  <%= javascript_include_tag 'trainee/trainee' %>
 </head>
 
 <body>
@@ -16,10 +16,9 @@
       <div class="col-sm-3 top1">
        <% content_for :title, 'admin | Action Cable Chat' %>
        <div class="message-history" id="messages">
-        <%#= render @messages %>
-        <%= render partial: 'messages/message', collection: @messages %> 
-      </div>
-      <div class="footer" >
+         <%= render partial: 'messages/message', collection: @messages %> 
+       </div>
+       <div class="footer" >
         <div class="input-box">
           <input type="text" class="input-box_text" id="message_input"/>
         </div>

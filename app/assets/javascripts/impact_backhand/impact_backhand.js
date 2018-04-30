@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require ckeditor/init
 //= require popper
+//= require impact_backhand/rooms
 //= require bootstrap
 //= require dataTables.bootstrap4.min
 //= require jquery.dataTables.min

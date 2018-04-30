@@ -14,11 +14,11 @@
 		<div class="main-menu">
 			<h5 class="sidenav-heading">Main</h5>
 			<ul id="side-main-menu" class="side-menu list-unstyled">  
+				<%if current_user.role == "admin" %>
 				<li><%= link_to admin_dashboard_path do %>
 					<i class="icon-home"></i>Dashboards<%end%>
 				</li>
 				<% if user_signed_in? %>
-				<%if current_user.role == "admin" %>
 				<li><%= link_to admin_trainers_path do %>
 					<i class="icon-form"></i>Trainers<%end%>
 				</li>
@@ -26,10 +26,10 @@
 					<i class="fa fa-bar-chart"></i>Trainees<%end%>
 				</li>
 				<%end%>
-				<%end%>
 				<li><%= link_to admin_tasks_path do %>
 					<i class="icon-grid"></i>Tasks<%end%>
 				</li>
+				<%end%>
 				<li><%= link_to new_user_session_path do %>
 					<% if user_signed_in? %>
 					<!-- <p><i class="icon-interface-windows"></i>You are Sign In</p> -->
