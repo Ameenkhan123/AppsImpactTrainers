@@ -4,11 +4,14 @@ class Admin::DashboardsController < ApplicationController
 
 	def trainees
 		@users = User.all
+		@messages = Message.all
 	end
 
 	def trainers
 		@users = User.all
+		@messages = Message.all
 	end
-	def dashboard		
+	def dashboard
+	@messages = Message.all		
 	end
 end

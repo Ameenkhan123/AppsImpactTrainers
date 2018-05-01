@@ -18,3 +18,31 @@
 $simple-line-font-path        : "/path/to/font/files";
 $simple-line-font-family      : "desired-name-font-family";
 $simple-line-icon-prefix      : "prefix-";
+
+ul {
+  padding-left: 0px;
+  list-style: none;
+}
+
+.chats-list {
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.chat-sent {
+  position: relative;
+  background-color: #D9EDF7;
+  border-color: #BCE8F1;
+  margin: 5px 20px;
+  padding: 5px;
+  margin-left: 85%;
+}
+
+.chat-received {
+  background-color: #F1F0F0;
+  border-color: #EEEEEE;
+  margin: 5px 20px;
+  padding: 5px;
+  margin-left: left;
+}

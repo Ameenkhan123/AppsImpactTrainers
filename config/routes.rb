@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+	mount ActionCable.server => '/cable'
 	root to: 'home#index'
 	get 'index' => 'home#index'
-	get 'home/charts'
+	get 'room' => 'rooms#show'
+	get 'conversations' => 'conversations#index'
 	resources :home
 	resources :tasks
 	devise_for :users 
@@ -36,6 +38,13 @@ Rails.application.routes.draw do
 	else
 		mount Shrine.upload_endpoint(:cache) => "/upload"
 	end
-	mount ActionCable.server => '/cable'
+	
+	resources :conversations, only: [:create] do
+		member do
+			post :close
+		end
+
+		resources :chats, only: [:create]
+	end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

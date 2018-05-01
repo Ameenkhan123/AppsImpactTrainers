@@ -6,19 +6,23 @@ class Admin::UsersController < ApplicationController
 	
 	def index
 		@users = User.all
+		@messages = Message.all
 	end
 
 	
 	def show
 		@user = User.find(params[:id])
+		@messages = Message.all
 	end
 
 	
 	def new
 		@user = User.new
+		@messages = Message.all
 	end
 
 	def edit
+		@messages = Message.all
 	end
 
 	

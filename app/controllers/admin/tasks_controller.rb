@@ -17,16 +17,19 @@ class Admin::TasksController < ApplicationController
 	def show
 		@task = Task.friendly.find(params[:id])
 		@users = User.all
+		@messages = Message.all
 		# @task = Task.new
 	end
 
 	# GET /tasks/new
 	def new
 		@task = Task.new
+		@messages = Message.all
 	end
 
 	# GET /tasks/1/edit
 	def edit
+		@messages = Message.all
 	end
 
 	# POST /tasks
