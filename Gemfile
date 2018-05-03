@@ -66,3 +66,4 @@ gem 'aws-sdk'
 gem 'fastimage'
 gem "rolify"
 gem 'friendly_id'
+gem 'rails_emoji_picker'

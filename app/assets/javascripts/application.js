@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require ckeditor/init
+//= require rails_emoji_picker
 //= require popper
 //= require bootstrap
 //= require rooms

@@ -1,5 +1,6 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
+@import 'rails_emoji_picker';
 @import "font-awesome";
 @import "rooms";
 @import "dataTables.bootstrap4.min";
@@ -20,29 +21,40 @@ $simple-line-font-family      : "desired-name-font-family";
 $simple-line-icon-prefix      : "prefix-";
 
 ul {
-  padding-left: 0px;
-  list-style: none;
+padding-left: 0px;
+list-style: none;
 }
 
 .chats-list {
-  max-height: 200px;
-  overflow-y: auto;
-  overflow-x: hidden;
+max-height: 200px;
+overflow-y: auto;
+overflow-x: hidden;
 }
 
 .chat-sent {
-  position: relative;
-  background-color: #D9EDF7;
-  border-color: #BCE8F1;
-  margin: 5px 20px;
-  padding: 5px;
-  margin-left: 85%;
+position: relative;
+background-color: white;
+border-color: black;
+margin: 5px 20px;
+padding: 5px;
+margin-left: 75%;
 }
 
 .chat-received {
-  background-color: #F1F0F0;
-  border-color: #EEEEEE;
-  margin: 5px 20px;
-  padding: 5px;
-  margin-left: left;
+background-color: white;
+border-color: black;
+margin: 5px 20px;
+padding: 5px;
+margin-left: left;
+}
+.emoji-picker-container 
+{
+position: relative;
+display: inline-block;
+font-size: 45px;
+min-width: 95%;
+}
+.emoji-picker{
+margin-right: 15px;
+margin-top: 5px;
 }

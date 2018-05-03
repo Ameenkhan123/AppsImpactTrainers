@@ -16,7 +16,7 @@
 				<ul>
 					<% @users.each do |user| %>
 					<% if user.role == "trainee" or user.role == "trainer"%>
-					<li><%= link_to user.email, conversations_path(user_id: user), remote: true, method: :post %></li>
+					<li><%= link_to user.name, conversations_path(user_id: user), remote: true, method: :post %></li>
 					<% end %>
 					<% end %>
 				</ul>
@@ -33,7 +33,7 @@
 				<ul>
 					<% @users.each do |user| %>
 					<% if user.role == "trainee" %>
-					<li><%= link_to user.email, conversations_path(user_id: user), remote: true, method: :post %></li>
+					<li><%= link_to user.name, conversations_path(user_id: user), remote: true, method: :post %></li>
 					<% end %>
 					<% end %>
 				</ul>
@@ -50,7 +50,7 @@
 				<ul>
 					<% @users.each do |user| %>
 					<% if user.role == "trainer" %>
-					<li><%= link_to user.email, conversations_path(user_id: user), remote: true, method: :post %></li>
+					<li><%= link_to user.name, conversations_path(user_id: user), remote: true, method: :post %></li>
 					<% end %>
 					<% end %>
 				</ul>
