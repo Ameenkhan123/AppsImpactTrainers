@@ -7,15 +7,26 @@
 				<%= render @messages %>
 			</div>
 			<!-- add this line -->
-			<span class="emoji-picker-container">
-				<div class="footer" >
-					<div class="input-box">
-						<input type="text" class="input-box_text" id="message_input" data-emojiable="true"/>
-					</div>
+			<div class="footer" >
+				<div class="input-box">
+					<form  id="message_input" >
+						<span class="emoji-picker-container">
+							<input type="text" class="input-box_text"  data-emojiable="true"/>
+						</span>
+						<input type="submit" class="btn btn-success" value="Send">
+					</form>
 				</div>
 			</div>
-		</span>
+		</div>
 		<!-- add this line -->
 		<div class="col-md-3"></div>
 	</div>
 </div>
+<style type="text/css">
+	.cke_top {
+		border-bottom: 1px solid #d1d1d1;
+		background: white; 
+		padding: 0px 0px 0px; 
+		white-space: normal;
+	}
+</style>

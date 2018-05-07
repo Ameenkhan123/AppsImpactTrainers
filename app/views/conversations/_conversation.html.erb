@@ -14,11 +14,19 @@
       <form class="new_chat">
         <input name="conversation_id" type="hidden" value="<%= conversation.id %>">
         <input name="user_id" type="hidden" value="<%= user.id %>">
-        <span class="emoji-picker-container">
-          <textarea name="body" class="form-control" " data-emojiable="true" ></textarea>
-        </span>
+        <p class="emoji-picker-container cke_top">
+          <textarea name="body" class="form-control"  data-emojiable="true" ></textarea>
+        </p>
         <input type="submit" class="btn btn-success" value="Send">
       </form>
     </div>
   </div>
 </li>
+<style type="text/css">
+  .cke_top {
+    border-bottom: 1px solid #d1d1d1;
+    background: white; 
+    padding: 0px 0px 0px; 
+    white-space: normal;
+  }
+</style>

@@ -12,13 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require rails_emoji_picker
 //= require popper
 //= require bootstrap
+//= require cable
+//= require channels/conversation
+//= require channels/room
 //= require rooms
 //= require dataTables.bootstrap4.min
 //= require jquery.dataTables.min
-//= require_tree .
+//= require rails_emoji_picker
 (function() {
   $(document).on('click', '.toggle-window', function(e) {
     e.preventDefault();
